@@ -1,7 +1,8 @@
 import React from "react";
+import PageContainer from "./pagecontainer";
 
 function App() {
-  return null;
+  return <PageContainer />;
 }
 
 export default App;
