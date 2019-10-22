@@ -1,7 +1,8 @@
 import React, { Component } from "react";
-import CreateAccount from "./pages/create/create";
+//Current Pages for react app
+import Create from "./pages/create/create";
 import Login from "./pages/login/login";
-import HomePage from "./pages/homepage/homepage";
+import Homepage from "./pages/homepage/homepage";
 
 class PageContainer extends Component {
   constructor() {
@@ -12,20 +13,30 @@ class PageContainer extends Component {
       group: []
     };
   }
+  //Functions that handle changing the page through the state
+  toHomePage = () => {
+    this.setState({
+      currentPage: "Homepage"
+    });
+  };
+  toCreate = () => {
+    this.setState({
+      currentPage: "Create"
+    });
+  };
+  toLogin = () => {
+    this.setState({
+      currentPage: "Login"
+    });
+  };
 
   renderPage() {
     if (this.currentPage === "Homepage") {
-      this.setState({
-        currentPage: "Homepage"
-      });
+      return <Homepage />;
     } else if (this.currentPage === "Create") {
-      this.setState({
-        currentPage: "Create"
-      });
+      return <Create />;
     } else if (this.currentPage === "Login") {
-      this.setState({
-        currentPage: "login"
-      });
+      return <Login />;
     }
   }
 
