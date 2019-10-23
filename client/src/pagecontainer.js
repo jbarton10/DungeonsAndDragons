@@ -3,6 +3,7 @@ import React, { Component } from "react";
 import Create from "./pages/create/create";
 import Login from "./pages/login/login";
 import Homepage from "./pages/homepage/homepage";
+import RoomCreate from "./pages/roomCreate/roomCreate";
 
 class PageContainer extends Component {
   constructor() {
@@ -29,14 +30,27 @@ class PageContainer extends Component {
       currentPage: "Login"
     });
   };
+  toRoomCreate = () => {
+    this.setState({
+      currentPage: "RoomCreate"
+    });
+  };
 
   renderPage() {
     if (this.state.currentPage === "Homepage") {
-      return <Homepage toLogin={this.toLogin} />;
+      return (
+        <Homepage
+          toCreate={this.toCreate}
+          toRoomCreate={this.toRoomCreate}
+          toLogin={this.toLogin}
+        />
+      );
     } else if (this.state.currentPage === "Create") {
       return <Create />;
     } else if (this.state.currentPage === "Login") {
       return <Login />;
+    } else if (this.state.currentPage === "RoomCreate") {
+      return <RoomCreate />;
     }
   }
 
