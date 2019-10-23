@@ -31,17 +31,18 @@ class PageContainer extends Component {
   };
 
   renderPage() {
-    if (this.currentPage === "Homepage") {
-      return <Homepage />;
-    } else if (this.currentPage === "Create") {
+    if (this.state.currentPage === "Homepage") {
+      return <Homepage toLogin={this.toLogin} />;
+    } else if (this.state.currentPage === "Create") {
       return <Create />;
-    } else if (this.currentPage === "Login") {
+    } else if (this.state.currentPage === "Login") {
       return <Login />;
     }
   }
 
   render() {
-    retrurn(<div>{this.renderPage}</div>);
+    console.log(this.state.currentPage);
+    return <div>{this.renderPage()}</div>;
   }
 }
 
