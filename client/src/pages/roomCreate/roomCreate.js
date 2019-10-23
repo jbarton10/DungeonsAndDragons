@@ -13,6 +13,11 @@ class RoomCreate extends Component {
 
   onSubmit = event => {
     event.preventDefault();
+    if (this.state.roomID === "") {
+      alert("Please enter a room ID!");
+    } else {
+      this.props.toCreate();
+    }
   };
 
   render() {

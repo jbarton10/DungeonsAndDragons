@@ -50,7 +50,7 @@ class PageContainer extends Component {
     } else if (this.state.currentPage === "Login") {
       return <Login />;
     } else if (this.state.currentPage === "RoomCreate") {
-      return <RoomCreate />;
+      return <RoomCreate toCreate={this.toCreate} />;
     }
   }
 
